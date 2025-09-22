@@ -1,0 +1,45 @@
+﻿@page "/"
+@inject GreetingApiClient GreetingClient
+
+<PageTitle>Home</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<div class="mt-4">
+    <h2>Message from Database:</h2>
+    @if (isLoading)
+    {
+        <p>Loading...</p>
+    }
+    else if (!string.IsNullOrEmpty(greetingMessage))
+    {
+        <p class="alert alert-success">@greetingMessage</p>
+    }
+    else
+    {
+        <p>No greeting available</p>
+    }
+</div>
+
+@code {
+    private string? greetingMessage;
+    private bool isLoading = true;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            greetingMessage = await GreetingClient.GetGreetingAsync();
+        }
+        catch (Exception ex)
+        {
+            greetingMessage = $"Error loading greeting: {ex.Message}";
+        }
+        finally
+        {
+            isLoading = false;
+        }
+    }
+}

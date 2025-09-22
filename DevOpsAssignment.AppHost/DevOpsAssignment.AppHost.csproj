@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <Sdk Name="Aspire.AppHost.Sdk" Version="9.4.2"/>
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <UserSecretsId>07f3e1c4-71d8-4453-bf35-0b594a3bae63</UserSecretsId>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\DevOpsAssignment.ApiService\DevOpsAssignment.ApiService.csproj"/>
+        <ProjectReference Include="..\DevOpsAssignment.Web\DevOpsAssignment.Web.csproj"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Aspire.Hosting.AppHost" Version="9.4.2"/>
+        <PackageReference Include="Aspire.Hosting.PostgreSQL" Version="9.4.2" />
+    </ItemGroup>
+
+</Project>
