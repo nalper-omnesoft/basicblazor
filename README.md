@@ -33,11 +33,6 @@ DevOpsAssignment/
 
 - [.NET 9 SDK](https://dotnet.microsoft.com/download/dotnet/9.0)
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/) (for PostgreSQL container)
-- [.NET Aspire workload](https://learn.microsoft.com/dotnet/aspire/fundamentals/setup-tooling)
-
-Install .NET Aspire workload:
-```bash
-dotnet workload install aspire
 ```
 
 ## Getting Started
